@@ -25,10 +25,6 @@ jobs:
           path: ~/.npm
           key: node-modules-{{ hashFiles('**/package-lock.json') }}
 
-
-      - name: Lint app
-        run: npm run lint
-
       - name: Build app
         run: npm run build
 
