@@ -1,0 +1,10 @@
+<div class="link flex vertical-align_center">
+  @if(link()?.iconSrc) {
+    <svg-icon class='flex vertical-align_center horizontal-align_center' [src]="'../../../assets/icons/' + link()?.iconSrc + '.svg'"></svg-icon>
+  }
+
+  @if (link()?.label) {
+    <a class="link-item text_{{variant()}}" [routerLink]="link()?.label">{{ link()?.label}}</a>
+  }
+</div>
+ 

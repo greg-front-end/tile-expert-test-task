@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'app/sass/mixin' as *
+@use 'app/sass/variables' as *
+@use 'app/sass/flex' as *
+@use 'app/sass/text' as *
+
+* 
+  box-sizing: border-box
+  margin: 0
+
+html
+  font-family: "Roboto", sans-serif
+  font-weight: 400
+  font-style: normal
+  font-size: 16px
+  color: $dark-grey
+
+button
+  outline: none
+  padding: 0
+  border: none
+  background: none
+  font-size: 14px
+  cursor: pointer
+
+a
+  text-decoration: none
+  cursor: pointer
+
+input
+  border: none
+  padding: 14px 16px
+  border-radius: 4px
+
+.content-wrapper
+  max-width: 1440px
+  margin-inline: auto
+
+.content-mobile-wrapper
+  max-width: 414px
+  margin-inline: auto
+
+svg-icon > svg
+    display: inline-block
+    vertical-align: middle
+    transition: none
