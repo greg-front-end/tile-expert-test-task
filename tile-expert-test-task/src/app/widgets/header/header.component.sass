@@ -1,0 +1,77 @@
+@use '../../sass/variables' as *
+@use '../../sass/mixin' as *
+
+.header
+  width: 100%
+  background-color: $blue
+
+  &-wrapper
+    gap: 16px
+
+  @include pcScreen()
+    padding-inline: 16px 12px
+
+    &-pc-menu
+      position: relative
+      display: flex
+
+    &-add-item,
+    &-search-button
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 40px
+      width: 40px
+
+    &-search-button
+      margin-left: 40px
+
+    &-add-item
+      margin-left: 16px
+      justify-content: left
+      flex-grow: 1
+
+    &-search-input
+      position: absolute
+      right: 0
+      width: 0
+      padding: 14px 0
+      transition: all 0.5s
+      opacity: 0
+      visibility: hidden
+
+      &:focus-within,
+      &:focus-visible
+        border-color: $white
+        outline: none
+        caret-color: $dark-grey
+
+      &_active
+        width: 100%
+        padding: 14px 16px
+        opacity: 1
+        visibility: visible
+      
+        &:placeholder
+          color: $light-grey
+
+    &-mobile-menu
+      display: none
+
+    &-user-wrapper
+      gap: 12px
+
+      app-badge
+        width: 40px
+
+  @include mobileScreen()
+    padding-inline: 16px
+
+    &-pc-menu
+      display: none
+
+    &-mobile-menu 
+      display: flex
+
+    &-user-wrapper
+      display: none
