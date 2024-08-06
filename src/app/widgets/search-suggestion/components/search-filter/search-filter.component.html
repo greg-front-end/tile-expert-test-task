@@ -1,0 +1,38 @@
+<div class="filter">
+  <div class="filter-search">
+    <fieldset>
+      <legend>Автор</legend>
+
+      <div class="filter-input-wrapper flex vertical-align_center">
+        <input 
+          class="filter-search-input" 
+          type="text"
+          placeholder="Имя и должность"
+          />
+
+          <svg-icon src="../../../../../assets/icons/me.svg" />
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="filter-checkboxes">
+    <div class="filter-author-checkbox flex">
+      @for(checkbox of authorCheckboxList; track $index) {
+        <app-check-box [checkbox]="checkbox" />
+      }
+    </div>
+
+    <div class="filter-only-checkbox">
+      <h3 class="filter-only-title">
+        Только
+      </h3>
+
+      <div class="filter-only-checkbox-list flex">
+        @for(checkbox of onlyCheckboxList; track $index) {
+          <app-check-box [checkbox]="checkbox" />
+        }      
+      </div>
+    </div>
+  </div>
+
+</div>

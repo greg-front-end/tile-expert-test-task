@@ -1,0 +1,41 @@
+<div 
+  class="search"
+  appClickOutside
+  (clickOutside)="onClickInputOutSide()"
+  [ignoreElements]="[searchSuggestionsBlock()?.nativeElement]"
+  >
+  
+  <div class="search-wrapper flex"
+    [class.search-wrapper_active]="isActiveSearchInput"
+  >
+    <button class="search-mobile-close"
+      (click)="onActiveSearch()"
+    >
+      <svg-icon src=".././../../assets/icons/arrow_back.svg" />
+    </button>
+  
+    <input 
+      class="search-input" 
+      type="text"
+      [placeholder]="placeholder"
+      (focus)="onFocus()"
+      [(ngModel)]="searchValue"
+    />
+  
+    <button 
+      class="search-submit-button"
+      (click)="onSumbitSearch()"
+    >
+      Найти
+    </button>
+  </div>
+  
+  <button class="search-active-button" (click)="onActiveSearch()">
+    <svg-icon src="../../../assets/icons/search.svg"></svg-icon>
+  </button>
+</div>
+
+<app-search-suggestion
+  #searchSuggestions
+  [isActive]="isInputFocused && isActiveSearchInput"
+/>

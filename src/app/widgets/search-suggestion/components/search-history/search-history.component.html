@@ -1,0 +1,12 @@
+<div class="history">
+  <h3 class="history-title">История</h3>
+
+  <ul class="history-list flex column">
+    @for(history of historyService.getAllHistory(); track $index) {
+      <li 
+        class="history-list-item"
+        (click)="onClick(history)"
+      >{{ history }}</li>
+    }
+  </ul>  
+</div>

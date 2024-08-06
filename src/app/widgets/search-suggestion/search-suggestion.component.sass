@@ -1,0 +1,55 @@
+@use "./../../sass/variables" as *
+@use "./../../sass/mixin" as *
+  
+.search-suggestion
+  position: absolute
+  top: 56px
+  left: 0
+  z-index: 20
+  display: none
+  width: 100%
+  max-width: 704px
+  min-height: 228px
+  background-color: $white
+  border-radius: 4px
+  box-shadow: 2px 0px 14px $light-grey
+
+  &_active
+    display: flex
+
+  @include pcScreen
+    &-history,
+    &-filter 
+      padding: 20px 16px 0
+      width: 100%
+
+    &-history
+      flex-basis: 216px
+      position: relative
+      flex-shrink: 0
+      flex-grow: 1
+
+      &::before   
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        display: block
+        width: 1px
+        height: 100%
+        background-color: $border-color
+        z-index: 2
+
+  @include mobileScreen
+    left: 0
+    height: 100%
+    padding-inline: 16px
+    padding-top: 28px
+    border-radius: 0
+    box-shadow: none
+
+    &-filter
+      flex-grow: 1
+
+    &-history
+      display: none

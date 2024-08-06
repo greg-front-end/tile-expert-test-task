@@ -1,0 +1,116 @@
+@use "../../../../sass/variables" as *
+@use "../../../../sass/mixin" as *
+
+:host 
+  width: 100%
+
+  @include pcScreen
+    .search
+      display: flex
+      justify-content: center
+      
+      &-wrapper
+        position: absolute
+        right: 0
+        top: 4px
+        width: 0
+        height: 48px
+        transition: all 0.3s
+        visibility: hidden
+
+        input
+          padding: 0
+
+        &_active 
+          width: 100%
+          visibility: visible
+
+          input
+            padding: 10px 16px
+        
+      .search-wrapper_active > .search-submit-button
+        transition: all 0.2s
+        opacity: 1
+
+
+      &-active-button
+        width: 40px
+        height: 40px
+
+  @include mobileScreen
+    .search
+      &-wrapper
+        display: none
+
+        &_active 
+          display: flex
+          align-items: center
+          position: absolute
+          left: 0
+          top: 0
+          height: 56px
+          width: 100%
+          padding: 32px 16px 16px
+          background-color: $white
+
+      &-active-button
+        width: 40px
+        height: 40px
+        margin-left: 4px
+      
+      &-submit-button
+        display: none
+
+
+.search
+  @include pcScreen 
+    &-mobile-close
+      display: none
+      
+
+    &-input
+      width: 100%
+      transition: all 0.3s
+
+      &:focus-within,
+      &:focus-visible
+        border-color: $white
+        outline: none
+        caret-color: $dark-grey
+
+      &:placeholder
+        color: $light-grey
+
+    &-submit-button
+      position: absolute
+      right: 0
+      height: 100%
+      padding-inline: 10px
+      background: yellow
+      border-radius: 4px
+      transition: all 0.2s
+      opacity: 0
+
+  @include mobileScreen
+    &-mobile-close
+      display: block
+      width: 24px
+      height: 24px
+      margin-right: 16px
+
+    &-input 
+      background-color: #F5F5F5
+      border-radius: 24px
+      height: 48px
+      width: 100%
+      padding-left: 20px
+      z-index: 2
+
+      &:focus-within,
+      &:focus-visible
+        border-color: $white
+        outline: none
+        caret-color: $dark-grey
+
+      &:placeholder
+        color: $light-grey
