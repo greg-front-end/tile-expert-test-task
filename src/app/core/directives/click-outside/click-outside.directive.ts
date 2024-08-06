@@ -1,5 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, inject, input, Input, output, Output } from '@angular/core';
-import { SearchSuggestionComponent } from '../../../widgets/search-suggestion/search-suggestion.component';
+import { Directive, ElementRef, HostListener, inject, input, output } from '@angular/core';
 
 @Directive({
     selector: '[appClickOutside]',

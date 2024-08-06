@@ -20,7 +20,8 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainSearchInputComponent implements OnInit {
-  public searchSuggestionsBlock: Signal<ElementRef | undefined> = viewChild<SearchSuggestionComponent, ElementRef>(SearchSuggestionComponent, { read: ElementRef });
+  public searchSuggestionsBlock: Signal<ElementRef | undefined> =
+    viewChild<SearchSuggestionComponent, ElementRef>(SearchSuggestionComponent, { read: ElementRef });
   public historyService = inject(HistoryService);
 
   public searchValue: string = '';

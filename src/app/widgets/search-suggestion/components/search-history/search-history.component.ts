@@ -1,5 +1,4 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component, inject } from '@angular/core';
 import { HistoryService } from '../../../../core/services/history/history.service';
 
 @Component({
