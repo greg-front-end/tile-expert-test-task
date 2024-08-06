@@ -1,4 +1,5 @@
 @use './../../../sass/variables' as *
+@use './../../../sass/mixin' as *
 
 .badge
   position: relative
@@ -14,3 +15,10 @@
     font-size: 14px
     outline-color: $blue
     outline-style: solid
+
+  @include mobileScreen
+    width: 40px
+    height: 40px
+    
+    span
+      display: none

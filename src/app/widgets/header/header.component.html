@@ -1,50 +1,38 @@
 <header class="header">
   <div class="content-wrapper">
     <div class="header-wrapper flex vertical-align_center">
+      <div class="header-burger-menu">
+        <svg-icon src="./assets/icons/menu.svg"/>
+      </div>
+
       <div class="header-logo">
         <app-logo />
       </div>
 
       <menu 
         class="header-pc-menu flex header-links vertical-align_center"
-        appClickOutside
-        (clickOutside)="isActiveSearchInput = false"
       >
         @for(link of linksDataList; track $index) {
           <app-link
             variant="white"
             [link]="link" 
+            class="header-link-item-{{link.iconSrc}}"
             >
           </app-link>
         }
-        
-        <input 
-          class="header-search-input" 
-          [class.header-search-input_active]="isActiveSearchInput"
-          type="text"
-          placeholder="|Поисковый запрос"
-          formControlName="search"
-        />
-        
-        <button class="header-search-button" (click)="isActiveSearchInput = !isActiveSearchInput">
-          <svg-icon src="../../../assets/icons/search.svg"></svg-icon>
-        </button>
+
+        <app-main-search-input />
       </menu> 
 
       <button class="header-add-item">
-        <svg-icon src="../../../assets/icons/add.svg"></svg-icon>
+        <svg-icon src="./assets/icons/add.svg"></svg-icon>
       </button>
-      
-      <menu class="header-mobile-menu flex header-links">
-        
-      </menu>
-
+    
       <div class="header-user-wrapper flex vertical-align_center">
         <app-badge [numberOfNotifications]="32" />
-
+          
         <app-avatar />
       </div>
     </div>
   </div>
 </header>
-   

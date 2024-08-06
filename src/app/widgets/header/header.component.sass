@@ -5,15 +5,24 @@
   width: 100%
   background-color: $blue
 
-  &-wrapper
-    gap: 16px
+  &-add-item 
+    width: 40px
+    height: 40px
 
   @include pcScreen()
     padding-inline: 16px 12px
 
+    &-burger-menu
+      display: none
+
     &-pc-menu
+      width: 704px
       position: relative
       display: flex
+      z-index: 0
+
+    &-logo
+      margin-right: 40px
 
     &-add-item,
     &-search-button
@@ -24,39 +33,12 @@
       width: 40px
 
     &-search-button
-      margin-left: 40px
+      margin-left: 30px
 
     &-add-item
       margin-left: 16px
       justify-content: left
       flex-grow: 1
-
-    &-search-input
-      position: absolute
-      right: 0
-      width: 0
-      padding: 14px 0
-      transition: all 0.5s
-      opacity: 0
-      visibility: hidden
-
-      &:focus-within,
-      &:focus-visible
-        border-color: $white
-        outline: none
-        caret-color: $dark-grey
-
-      &_active
-        width: 100%
-        padding: 14px 16px
-        opacity: 1
-        visibility: visible
-      
-        &:placeholder
-          color: $light-grey
-
-    &-mobile-menu
-      display: none
 
     &-user-wrapper
       gap: 12px
@@ -67,11 +49,46 @@
   @include mobileScreen()
     padding-inline: 16px
 
-    &-pc-menu
+    &-wrapper
+      gap: 4px
+
+    &-link-item-link,
+    &-link-item-contacts,
+    &-link-item-tag,
+    &-link-item-favorites 
       display: none
 
-    &-mobile-menu 
-      display: flex
+    &-link-item-history
+      font-size: 0
+
+
+    &-burger-menu
+      display: block
+      margin-right: 12px
+      cursor: pointer
+
+    &-logo
+      margin-right: 24px
+      height: 56px
+
+      app-link,
+      button
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 40px
+        hegiht: 40px
+
+    &-pc-menu
+      order: 2
+
+    &-add-item
+      order: 0
+      width: 40px
+      height: 40px
 
     &-user-wrapper
-      display: none
+      order: 3
+      app-avatar 
+        display: none
+      

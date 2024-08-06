@@ -1,7 +1,7 @@
-import { Component, input, OnInit } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SvgIconComponent } from 'angular-svg-icon';
-import { Link, LinkWithIcon } from './model';
+import { LinkWithIcon } from './model';
 
 @Component({
   selector: 'app-link',

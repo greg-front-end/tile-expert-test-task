@@ -1,0 +1,51 @@
+@use "../../../../sass/variables" as *
+@use "../../../../sass/mixin" as *
+
+.filter
+  &-search
+    width: 100%
+    margin-bottom: 16px
+
+    fieldset
+      width: 100%
+      border-radius: 4px
+      border: 1px solid $border-color
+
+      legend
+        color: #8C9499
+
+  &-input-wrapper 
+    justify-content: space-between
+
+    svg-icon
+      cursor: pointer
+
+  &-search-input
+    padding: 10px 8px
+    width: 100%
+
+    &:focus-within,
+    &:focus-visible
+      border-color: $white
+      outline: none
+      caret-color: $dark-grey
+
+    &:placeholder
+      color: $light-grey
+
+  &-author-checkbox 
+    margin-bottom: 20px
+    gap: 8px
+
+  &-only-title
+    font-size: 16px
+    font-weight: normal
+    margin-bottom: 4px
+
+  &-only-checkbox-list
+    gap: 8px
+
+  @include mobileScreen
+    &-author-checkbox,
+    &-only-checkbox-list
+      flex-direction: column
